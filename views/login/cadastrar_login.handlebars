@@ -1,0 +1,18 @@
+<div class="flex items-center justify-center min-h-screen">
+  <div class="container p-8 rounded shadow-md max-w-sm w-full bg-azulclaro">
+    <form action="/users/register" method="POST">
+      <div class="mb-4">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-700">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" class="w-full px-3 py-2 rounded-md border focus:outline-none focus:ring-1 focus:ring-cinza">
+      </div>
+      <label for="" class="text-red-500">{{error "email"}}</label>
+      <div class="mb-4">
+        <label for="senha" class="block mb-2 text-sm font-medium text-gray-700">Senha:</label>
+        <input type="password" id="senha" name="password" class="w-full px-3 py-2 rounded-md border focus:outline-none focus:ring-1 focus:ring-cinza">
+      </div>
+      <label for="" class="text-red-500">{{error "password"}}</label>
+      <br>
+      <button type="submit" class="w-24 px-2 rounded-md bg-cinza text-white font-medium inset-x-0 bottom-0">Cadastrar</button>
+    </form>
+  </div>
+</div>

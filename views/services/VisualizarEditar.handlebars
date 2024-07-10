@@ -1,0 +1,49 @@
+<div class="h-2"></div>
+<div class="bg-primary m-4 p-8 rounded-md sm:m-4 md:m-8 lg:m-12 xl:mx-52 flex flex-col space-y-2">
+    <form action="/users/{{user.id}}/servicos/{{servico.id}}" method="POST">
+    <div class="p-2 pl-16 pr-64">
+        <div class="text-2xl">Nome completo:</div>
+        <div class="w-full mb-4"><input type="text" name="nome" id="nome" class="w-full rounded-md p-0.5 bg-secondary-200" value="{{servico.nome}}"></div>
+        <label for="" class="text-red-500">{{error "nome"}}</label>
+        <div class="text-2xl">CPF:</div>
+        <div class="w-full mb-4"><input type="text" name="cpf" id="cpf" class="w-full rounded-md h-8 p-0.5 bg-secondary-200" value="{{servico.cpf}}"></div>
+        <label for="" class="text-red-500">{{error "cpf"}}</label>
+        <div class="text-2xl">Telefone móvel:</div>
+        <div class="w-full mb-4"><input type="text" name="telefone_movel" id="telefone" class="w-full rounded-md h-8 p-0.5 bg-secondary-200" value="{{servico.telefone_movel}}"></div>
+        <label for="" class="text-red-500">{{error "telefone_movel"}}</label>
+        <div class="text-2xl">Email:</div>
+        <div class="w-full mb-4"><input type="text" name="email" id="email" class="w-full rounded-md h-8 p-0.5 bg-secondary-200" value="{{servico.email}}"></div>
+        <label for="" class="text-red-500">{{error "email"}}</label>
+        <div class="text-2xl">Endereço:</div>
+        <div class="w-full mb-4"><input type="text" name="endereco" id="endereco" class="w-full rounded-md h-8 p-0.5 bg-secondary-200" value="{{servico.endereco}}"></div>
+        <label for="" class="text-red-500">{{error "endereco"}}</label>
+        <div class="text-2xl mb-4">Tipo de Servico</div>
+        <div class="mb-4 ml-4 text-1xl">
+            <label class="m-1">
+                <input type="radio" name="tipo_servico" value="trabalhista" {{#if (verify servico.tipo_servico "trabalhista") }} checked {{/if}}>
+                Trabalhista
+            </label>
+            <label class="m-1">
+                <input type="radio" name="tipo_servico" value="civel" {{#if (verify servico.tipo_servico "civel") }} checked {{/if}}>
+                Cível
+            </label>
+            <label class="m-1">
+                <input type="radio" name="tipo_servico" value="familia" {{#if (verify servico.tipo_servico "familia") }} checked {{/if}}>
+                Família
+            </label>
+            <label class="m-1">
+                <input type="radio" name="tipo_servico" value="transito" {{#if (verify servico.tipo_servico "transito") }} checked {{/if}}>
+                Direito de Trânsito
+            </label>
+        </div>
+        <label for="" class="text-red-500">{{error "tipo_servico"}}</label>
+        <div class="text-2xl">Descrição:</div>
+        <div class="w-full mb-4"><textarea name="descricao" id="descricao" cols="30" rows="10" class="w-full rounded-md h-32 p-0.5 bg-secondary-200">{{servico.descricao}}</textarea></div>
+        <label for="" class="text-red-500">{{error "descricao"}}</label>
+    </div>
+    <div class="flex justify-end">
+        <button type="submit" class="mr-2 bg-secondary-100 p-2 rounded-md w-24 mt-3.5 text-white text-2xl hover:border-2 border-white hover:p-1.5 focus:bg-white focus:text-black focus:border-2 focus:border-black focus:p-1.5 transition duration-300">Editar</button>
+        <a href="/users/{{user.id}}/servicos/delete/{{servico.id}}"><button type="button" class="ml-2 bg-secondary-100 p-2 rounded-md w-24 mt-3.5 text-white text-2xl hover:border-2 border-white hover:p-1.5 focus:bg-white focus:text-black focus:border-2 focus:border-black focus:p-1.5 transition duration-300">Excluir</button></a>
+    </div>
+    </form>
+</div>

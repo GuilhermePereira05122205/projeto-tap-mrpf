@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body{
+  height: 100vh;
+}
+
+nav.menu-lateral{
+  width: 60px;;
+  height: 100%;
+  background-color: #ADD8E6;
+  padding: 40px 0 40px 1%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+.btn-expandir{
+  width: 100%;
+  padding-left: 10px;
+}
+.btn-expandir > i{
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+ul{
+  height: 100%;
+}
+ul li.item-menu{
+  transition: .2s;
+}
+ul li.ativo{
+  background-color: #808080;
+}
+ul li.item-menu.expandir{
+  background: #808080;
+}
+ul li.item-menu a{
+  color: white;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+ul li.item-menu a .txt-link{
+  margin-left: 70px;
+  transition: .7s;
+  opacity: 0;
+}
+.expandir .txt-link{
+  margin-left: 40px;
+  opacity: 1 !important;
+}
+ul li.item-menu a .icon > i{
+  font-size: 30px;
+  margin-left: 0.3px;
+}

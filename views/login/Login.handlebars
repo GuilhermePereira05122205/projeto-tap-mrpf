@@ -1,0 +1,12 @@
+<div class="bg-primary m-4 p-8 rounded-md sm:m-8 md:m-16 lg:m-24 xl:mx-80 flex flex-col space-y-2">
+    <form action="/users/login" method="POST">
+        <div><p class="text-2xl">Email:</p></div>
+        <div class="w-full"><input type="text" class="w-full rounded-md h-8 p-1" name="email" id="email"></div>
+        <label for="" class="text-red-500">{{error "email"}}</label>
+        <div><p class="text-2xl">Senha:</p></div>
+        <div class="w-full"><input type="password" class="w-full rounded-md h-8 p-1" name="password" id="senha"></div>
+        <label for="" class="text-red-500">{{error "password"}}</label>
+        <div class="flex justify-center"><button type="submit" class="bg-secondary-100 p-2 rounded-md w-24 mt-3.5 text-white text-2xl hover:border-2 border-white hover:p-1.5 focus:bg-white focus:text-black focus:border-2 focus:border-black focus:p-1.5 transition duration-300">Logar</button></div>
+        <a class="text-blue-700 underline" href="/users/register">Cadastrar-se</a>
+    </form>
+</div>

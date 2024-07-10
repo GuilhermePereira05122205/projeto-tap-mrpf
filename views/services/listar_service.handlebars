@@ -1,0 +1,25 @@
+
+{{!-- titulo --}}
+<h1 class="text-5xl text-azulclaro text-center mt-10">Listar Serviços</h1> 
+{{!-- titulo --}}
+
+
+<div class="container mx-auto grid grid-cols-2 gap-4 mt-10 mb-10 max-w-4xl">
+{{#each servicos}}
+  <div class="">
+    <img
+    {{#if (verify tipo_servico "civel") }}  src="/img/Cível2.jpg"  {{/if}} 
+    {{#if (verify tipo_servico "trabalhista") }}  src="/img/CarteiradeTrabalho.jpg"  {{/if}} 
+    {{#if (verify tipo_servico "familia") }}  src="/img/Família.jpg"  {{/if}} 
+    {{#if (verify tipo_servico "transito") }}  src="/img/DireitodeTransito.jpg"  {{/if}} 
+      alt="Imagem do serviço" class="w-full h-48 object-cover">
+    <div class="card-body">
+    <h2 class="card-title"> Tipo do serviço: {{tipo_servico}}</h2>
+    <p class="card-text">Cliente: {{nome}}</p>
+    <a href="/users/{{../user.id}}/servicos/{{id}}" class="text-violet-600">Visualizar</a>
+    </div>
+  </div>
+{{/each}}
+
+
+  
